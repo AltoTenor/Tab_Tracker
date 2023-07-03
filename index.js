@@ -41,7 +41,7 @@ function singdelete(index,arr){
     print(arr);
 }
 
-//Single Delete
+
 document.addEventListener("click", function(e){
     console.log(e.target.classList);
     if (e.target.classList.contains('trash')) {
