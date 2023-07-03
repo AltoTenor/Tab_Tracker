@@ -25,7 +25,7 @@ let print=(arr)=>{
                                                         <a href="${i}" target="_blank" id="link"> 
                                                             ${i}
                                                         </a>
-                                                        <a href="#" style="font-size:13px" id="trash_${index}" onClick="singdelete(${index},myLeads)"> 🗑️ </a>
+                                                        <a href="#" style="font-size:13px" class="trash" data-internalid="${index}">🗑️ </a>
                                                     </li>`
                                                     );
     ulEL.innerHTML=listitems;
@@ -40,6 +40,17 @@ function singdelete(index,arr){
     savetolocal(arr);
     print(arr);
 }
+
+//Single Delete
+document.addEventListener("click", function(e){
+    console.log(e.target.classList);
+    if (e.target.classList.contains('trash')) {
+        console.log('deleting' + e.target.getAttribute("data-internalid"));
+        let num=e.target.getAttribute("data-internalid");
+        singdelete(num,myLeads);
+        // alert(e.target.innerHTML);
+    }
+});
 
 //Tab Function
 tabbtn.addEventListener("click",()=>{
