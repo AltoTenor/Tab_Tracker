@@ -43,12 +43,10 @@ function singdelete(index,arr){
 
 
 document.addEventListener("click", function(e){
-    console.log(e.target.classList);
     if (e.target.classList.contains('trash')) {
-        console.log('deleting' + e.target.getAttribute("data-internalid"));
+        // console.log('deleting' + e.target.getAttribute("data-internalid"));
         let num=e.target.getAttribute("data-internalid");
         singdelete(num,myLeads);
-        // alert(e.target.innerHTML);
     }
 });
 
